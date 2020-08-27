@@ -29,7 +29,7 @@
 ;;; THIS SOFTWARE.                                                      ;;;
 ;;;                                                                     ;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;        Alok Parlikar (aup@cs.cmu.edu)                               ;;;
+;;;        Alok Parlikar (aup@cs.cmu.edu)    
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;
 ;;; Lexicon, LTS and Postlexical rules for cmu_indic
@@ -40,7 +40,7 @@
 ;; As we support code-switching we also need to setup the US English cmulex
 (setup_cmu_lex)
 
-;; Supported languages: asm ben guj hin kan mar nep pan raj san tam tel
+;; Supported languages: asm ben guj hin kan mar nep odi pan raj san tam tel
 
 ;; asm Assamese
 ;; ben Bengali
@@ -49,6 +49,7 @@
 ;; kan Kannada
 ;; mar Marathi
 ;; mar Nepali
+;; odi Odia
 ;; pan Panjabi
 ;; raj Rajasthani (not Marwati)
 ;; san Sanskrit
@@ -117,6 +118,12 @@ Returns t if medial schwa in words is deleted in the current language"
                             (2451 2452)
                             (2528 2529)
 
+                            ;; Odia
+                            (2821 2828) ;; ଅ to ଌ
+                            (2831 2832) ;; ଏ to ଐ  
+                            (2835 2836)  ;; ଓ to ଔ
+                            (2912 2913)  ;; ୠ   to ୡ
+
                             ;; Tamil
                             (2949 2954)
                             (2958 2960)
@@ -164,6 +171,15 @@ Returns t if medial schwa in words is deleted in the current language"
                             (2524 2525)
                             (2527 2527)
                             (2544 2545)
+
+                            ;; Odia
+                            (2837 2856);;କ  to ନ
+                            (2858 2864);; ପ  to ର
+                            (2866 2867);; ଲ  to ଳ
+                            (2869 2873);; ଵ to ହ
+                            (2908 2909);; ଡ଼   to ଢ଼
+                            (2911 2911);;ୟ
+                            (2929 2929);;ୱ
 
                             ;; Tamil
                             (2965 2965)
@@ -219,6 +235,16 @@ Returns t if medial schwa in words is deleted in the current language"
                             (2519 2519)
                             (2530 2531)
 
+
+
+                            ;; Odia
+                            (2878 2884) ;;ା  to ୄ
+                            (2887 2888) ;;େ to ୈ
+                            (2891 2892)  ;; ୋ  to  ୌ
+                            (2902 2903)   ;;may be ignored as not used in general  ୖ to  ୗ
+                            (2914 2915)   ;;may be ignored as not used in general   ୢ to ୣ 
+
+
                             ;; Tamil
                             (3006 3010)
                             (3014 3016)
@@ -255,6 +281,9 @@ Returns t if medial schwa in words is deleted in the current language"
                             ;; Bengali
                             (2433 2434)
 
+                            ;; Odia
+                            (2817 2818);;   "ଁ" B01   and  " ଂ" B02
+
                             ;; Tamil
                             (2946 2946)
 
@@ -280,6 +309,9 @@ Returns t if medial schwa in words is deleted in the current language"
                             ;; Bengali
                             (2435 2435)
 
+                            ;; Odia
+                            (2819 2819) ;; ଃ     B03
+
                             ;; Tamil
                             (2947 2947)
 
@@ -303,6 +335,9 @@ Returns t if medial schwa in words is deleted in the current language"
 
                             ;; Bengali
                             (2492 2492)
+
+                            ;; Odia
+                            (2876 2876);; ଼
 
                             ;; Tamil: It doesn't have a nukta, but it
                             ;; has vowel lengthener that behaves like
@@ -330,6 +365,9 @@ Returns t if medial schwa in words is deleted in the current language"
                             ;; Bengali
                             (2493 2493)
 
+                            ;; Odia
+                            (2877 2877) ;;ଽ    B3D 
+
                             ;; Kannada
                             (3261 3261)
 
@@ -348,6 +386,9 @@ Returns t if medial schwa in words is deleted in the current language"
 
                             ;; Bengali
                             (2509 2509)
+
+                            ;; Odia
+                            (2893 2893) ;;halant ୍     B4D
 
                             ;; Tamil
                             (3021 3021)
@@ -376,6 +417,9 @@ Returns t if medial schwa in words is deleted in the current language"
 
                             ;; Bengali
                             (2534 2543)
+
+                            ;; Odia
+                            (2918 2927)
 
                             ;; Tamil
                             (3046 3058) ; Digits
@@ -416,6 +460,23 @@ Returns t if medial schwa in words is deleted in the current language"
                             (2526 2526)
                             (2532 2533)
                             (2546 2559)
+
+                            ;; Odia  
+                            (2816 2816)
+                            (2836 2836)
+                            (2829 2830)
+                            (2833 2834)
+                            (2857 2857)
+                            (2865 2865)
+                            (2868 2868)
+                            (2874 2875)
+                            (2885 2886)
+                            (2889 2890)
+                            (2894 2901)
+                            (2904 2907)
+                            (2910 2910)
+                            (2916 2917)
+                            (2936 2943)
 
                             ;; Tamil
                             (2955 2957)
@@ -504,6 +565,12 @@ Returns t if medial schwa in words is deleted in the current language"
 		( 2465 2524 )
 		( 2466 2525 )
 		( 2479 2527 )
+
+
+		;; Odia
+		( 2849 2908 ); ଡ     ଡ଼
+		( 2850 2909 ); ଢ    ଢ଼
+		;;( 2863 2911 ); ଯ     ୟ    not applicable for J and j in Odia
 
 		;; Tamil aU vowel in Tamil gets lengthened. See Tamil nukta
 		;; above for details.
@@ -740,14 +807,12 @@ Changes instances of ( J n~ ) to ( g n~ ) or ( g j ) depending on the language"
       (cons "g" (cons "n~" (indic_jnyan_replacement (cddr phones)))))))
    (t
     (cons (car phones) (indic_jnyan_replacement (cdr phones))))))
-
 ;; Post-lexical rules to handle contextual nasalization
 (define (indic_nasal_postfixes phones)
   "(indic_nasal_postfixes phones)
 Given a phone sequence containing a special character nX (contextual
 nasal), replace it with the appropriate nasal phone based on its
 context"
-
   (cond
    ((null phones) nil)
    ((not (car phones)) nil)
@@ -787,13 +852,10 @@ context"
           (indic_nasal_postfixes (cdr phones))))
    (t
     (cons (car phones) (indic_nasal_postfixes (cdr phones))))))
-
-
 ;; Post-lexical rules to delete medial Schwa
 (define (indic_delete_medial_schwa reverse_phones)
   "(indic_delete_medial_schwa reverse_phones)
 Delete Medial Schwa from a list of phones, received in reverse order"
-
   ;; This schwa deletion follows the technique by Narsimhan et al (2001).
   ;; 1. Process input from right to left
   ;; 2. If a schwa is found in a VC_CV context, then delete it.
@@ -802,11 +864,9 @@ Delete Medial Schwa from a list of phones, received in reverse order"
   ;; Hindi not violated, and no (ii) morpheme boundary present on the
   ;; left. But I don't know how to handle these yet. So this will be
   ;; wrong more often than the 11% reported in that paper. -- AUP
-
   (cond
    ((null reverse_phones) nil)
    ((not (car reverse_phones)) nil)
-
    ((eq 'A (nth 2 reverse_phones))
 	(if (and (indic_is_vowel (nth 0 reverse_phones))
 			 (not (indic_is_vowel (nth 1 reverse_phones)))
@@ -819,7 +879,6 @@ Delete Medial Schwa from a list of phones, received in reverse order"
 			  (indic_delete_medial_schwa (cdr reverse_phones)))))
    (t
 	(cons (car reverse_phones) (indic_delete_medial_schwa (cdr reverse_phones))))))
-
 ;; Post-lexical rules in Hindi to handle special schwa
 (define (hindi_schwa_postfixes phones)
   "(hindi_schwa_postfixes phones)
@@ -832,13 +891,10 @@ Change first schwa in words like rahana/rahna => rehana/rehna."
 	  (cons (car phones)
 			(cons 'E (cddr phones)))
 	  phones))
-
 ;; Post-lexical rules to handle Tamil stop allophony
-
 (define (tamil_voicing_postfixes phones)
   "(tamil_voicing_postfixes phones)
 Given a phone sequence, apply tamil voicing rules"
-
   (set! unvoiced_voiced_map
 		'(
 		  ( k  g  G   )
@@ -847,22 +903,18 @@ Given a phone sequence, apply tamil voicing rules"
 		  ( tB dB dh  )
 		  ( p  b  B   )
 		  ))
-
   ;; Tamil Pronunciation Rules are defined in Tolkappiyam, and the
   ;; implementation here is based on the following summary
-
   ;; (1) Stops are voiceless by default, typically when they occur initially or are germinated (p-p)
   ;; (2) Stops are voiced when they occur after a nasal
   ;; (3) Stops undergo (further) lenition when they occur both after a vowel/approximant and before another vowel
   ;; (4) Word-initial c becomes an s
-
   ;; LTS for tamil only yield unvoiced stops. So we only need to apply
   ;; rules (2) and (3) postlexically
   (cond
    ((null phones) nil)
    ((not (car phones)) nil)
    ((not (cdr phones)) phones)
-
    ((assoc (cadr phones) unvoiced_voiced_map)
 	;; Next phone is a stop that could be mapped.
 	(cond
@@ -873,12 +925,10 @@ Given a phone sequence, apply tamil voicing rules"
 	  ;; this is word-initial, this function basically processes stops
 	  ;; in the cadr, hence if car is c, it's assumed to be
 	  ;; word-initial (Shyam - I don't think this is working well)
-
 	  (if (eq 'c (cadr phones))
 		  ;; c-c should be left as c-c
 		  (cons 'c (cons 'c (tamil_voicing_postfixes (cddr phones))))
 		  (cons 's (tamil_voicing_postfixes (cdr phones)))))
-
 	 ;; If current phone is a nasal, add voicing.
 	 ((and (not (indic_is_vowel (car phones)))
 		   (string-equal (phone_feature (car phones) 'ctype) "n"))
@@ -886,7 +936,6 @@ Given a phone sequence, apply tamil voicing rules"
 			(cons
 			 (cadr (assoc (cadr phones) unvoiced_voiced_map))
 			 (tamil_voicing_postfixes (cddr phones)))))
-
 	 ;; If current phone is a vowel/approximant and next.next is also a vowel
 	 ;; then stop undergoes lenition
 	 ((or (indic_is_vowel (car phones))
@@ -900,7 +949,6 @@ Given a phone sequence, apply tamil voicing rules"
 		  (cons (car phones)
 				(cons (cadr phones)
 					  (tamil_voicing_postfixes (cddr phones))))))
-
 	 ;; If current is vowel, but this is last syllable, then leave voicing as it is.
 	 ((and (indic_is_vowel (car phones))
 		   (not (cddr phones)))
@@ -910,7 +958,6 @@ Given a phone sequence, apply tamil voicing rules"
 	  (cons (car phones) (tamil_voicing_postfixes (cdr phones))))))
    (t
 	(cons (car phones) (tamil_voicing_postfixes (cdr phones))))))
-
 ;Post-lexical rules to handle Tamil word-final u reduction
 (define (tamil_u_postfixes phones)
   "(tamil_u_postfixes phones
@@ -943,7 +990,6 @@ rr rr -> tr tr rr and n rr -> nr dr rr."
 (define (punjabi_vowel_postfixes phones)
   "(punjabi_vowel_postfixes phones)
 Vowel changes for sequence of two vowels, or vowels influenced by hv."
-
   (set! hv_vowel_map
 		'(
 		  ( i  aI  e )
@@ -967,27 +1013,21 @@ Vowel changes for sequence of two vowels, or vowels influenced by hv."
          (eq (cadr phones) 'hv))
     (cons (caddr (assoc (car phones) hv_vowel_map))
           (cons 'hv (cddr phones))))
-
    ;; Change the sequence ( A: u ) => ( aU )
    ((and (eq (car phones) 'A:)
          (eq (cadr phones) 'u))
     (cons 'aU
           (cddr phones)))
-
    ;; Change the sequence ( A: A ) => ( A: )
    ((and (eq (car phones) 'A:)
          (eq (cadr phones) 'A))
     (cons 'A:
           (cddr phones)))
-
    (t
 	  (cons (car phones) (punjabi_vowel_postfixes (cdr phones))))))
-
-
 (define (punjabi_pronoun_postfixes phones)
   "(punjabi_pronoun_postfixes phones)
 Provide better approximates for 3rd person singular pronouns ih/uh => eh/oh"
-
   (set! pronoun_vowel_map
 		'(
 		  ( i  e  )
@@ -1003,12 +1043,9 @@ Provide better approximates for 3rd person singular pronouns ih/uh => eh/oh"
             (cons 'hv
                   (cons 'nB (cdddr phones))))
       phones))
-
-
 (define (punjabi_glide_postfixes phones)
   "(punjabi_glide_postfixes phones)
 Given a phone sequence, convert i and u to glides if next to a vowel, V"
-
   (set! short_glide_map
 		'(
 		  ( i  j  )
@@ -1032,7 +1069,6 @@ Given a phone sequence, convert i and u to glides if next to a vowel, V"
     (cons (cadr (assoc (car phones) short_glide_map))
           (cons (cadr phones)
                 (punjabi_glide_postfixes (cddr phones)))))
-
    ;; Change sequences ( i:/u: V ) => ( i/u j/v V )
    ((and (assoc (car phones) long_glide_map)
          (indic_is_vowel (cadr phones)))
@@ -1040,62 +1076,50 @@ Given a phone sequence, convert i and u to glides if next to a vowel, V"
           (cons (cadr (assoc (car phones) long_glide_map))
                 (cons (cadr phones)
                       (punjabi_glide_postfixes (cddr phones))))))
-
    ;; Change sequence ( V i ) => ( V j )
    ((and (eq 'i (cadr phones))
          (indic_is_vowel (car phones)))
     (cons (car phones)
           (cons 'j
                 (punjabi_glide_postfixes (cddr phones)))))
-
    ;; Change sequence ( V i: (V) ) => ( V j i(j) (V) )
    ((and (eq 'i: (cadr phones))
          (indic_is_vowel (car phones))
          (indic_is_vowel (caddr phones)))
-
         ;; If i: between two vowels, rule is applied recursively to get ( j j )
         (cons (car phones)
               (cons 'j
                     (cons 'j
                           (punjabi_glide_postfixes (cddr phones))))))
-
    (t
 	(cons (car phones) (punjabi_glide_postfixes (cdr phones))))))
 	
 (define (indic_lex_sylbreak currentsyl remainder)
   "(indic_lex_sylbreak currentsyl remainder)
 t if this is a syl break, nil otherwise."
-
   (cond
-
    ((not (indic_contains_vowel remainder))
     nil)
-
    ((not (indic_contains_vowel currentsyl))
     nil)
-
    ((and (string-equal "n" (phone_feature (car remainder) "ctype"))
 		 (not (indic_is_vowel (cadr remainder))))
 	nil)
-
    ((and (indic_is_vowel (car currentsyl))
 		 (not (indic_is_vowel (car remainder)))
 		 (not (indic_is_vowel (cadr remainder))))
 	nil)
-
    ((and (not (indic_is_vowel (car remainder)))
 		 (not (indic_is_vowel (cadr remainder)))
 		 (not (indic_is_vowel (caddr remainder))))
 	;; We are expecting three consonants in a row. Don't break
 	nil)
-
    ((string-equal (car remainder) (cadr remainder)) ;; like the double t in uttar
 	nil)
    (t
 	;; Break otherwise.
     t))
   )
-
 (define (indic_assign_stress syls)
   (let ( (sylweights nil))
     (set! sylweights
@@ -1119,15 +1143,12 @@ t if this is a syl break, nil otherwise."
                          (set! weight 3))))
              weight)
            syls))
-
     ;; (format t "%l\n" sylweights)
-
     ;; The stress is placed on the syllable with the highest weight.
     ;; If there is a tie, the last-most syllable with highest weight
     ;; is chosen.  However, the last syllable of the word does not
     ;; participate in tie-breaking. That is, it is stressed only when
     ;; there are no ties. (Hussein 1997)
-
     (set! best_weight 0)
     (set! stress_position 0)
     (let ((p sylweights) (pos 0))
@@ -1141,7 +1162,6 @@ t if this is a syl break, nil otherwise."
                     (cdr p))
                (set! stress_position pos)))
              (set! p (cdr p))))
-
     (set! syls
           (mapcar
            (lambda (s)
@@ -1151,10 +1171,8 @@ t if this is a syl break, nil otherwise."
                  (list (car s) 0)))
            syls))
     ))
-
 (define (indic_lex_syllabify_phstress phones)
   (let ((syl nil) (syls nil) (p phones) (stress 0))
-
     ;; Make syllables
     (while p
            (set! syl nil)
@@ -1165,12 +1183,9 @@ t if this is a syl break, nil otherwise."
            (set! syls (cons (list (reverse syl) stress) syls)))
     
     (set! syls (reverse syls))
-
     (if (member_string lex:language_variant '("hin" "mar" "raj" "asm" "ben" "pan"))
         (set! syls (indic_assign_stress syls)))
-
     syls))
-
 ;;; CMU	SAMPA	Comments
 ;;; devnagari
 (set! indic_eng_devn_phone_map
@@ -1218,7 +1233,6 @@ t if this is a syl break, nil otherwise."
 (z	s)	;; z is the correct mapping but will be infrequent so mapping to Jh instead
 (zh	c})	;; in CMUdict usage this seems to be closer to c} than z so mapping to c}
 ))
-
 (set! indic_eng_tamil_phone_map
 '(
 (aa 	A:)
@@ -1264,7 +1278,6 @@ t if this is a syl break, nil otherwise."
 (z	s)	;; z is the correct mapping but will be infrequent so mapping to Jh instead
 (zh	c})	;; in CMUdict usage this seems to be closer to c} than z so mapping to c}
 ))
-
 (set! indic_eng_telugu_phone_map
 '(
 (aa 	A:)
@@ -1310,8 +1323,6 @@ t if this is a syl break, nil otherwise."
 (z	s)	;; z is the correct mapping but will be infrequent so mapping to Jh instead
 (zh	c})	;; in CMUdict usage this seems to be closer to c} than z so mapping to c}
 ))
-
-
 (define (indic_ml_map_eng_phone p)
   (let ((m (assoc_string 
             p 
@@ -1328,7 +1339,6 @@ t if this is a syl break, nil otherwise."
      (t ;; its not there ??
       (list p))))
 )
-
 (define (indic_ml_lts_function word features)
   ;; Deals with romanized words (treats them as English)
   (cond
@@ -1358,15 +1368,12 @@ t if this is a syl break, nil otherwise."
       nnn_entry))
    (t 
     (indic_lts_function word features))))
-
 (define (is_english s)
   (if (is_english_string (item.name s))
       1
       0))
-
 (define (is_english_string str)
   (string-matches str "^[0-9a-zA-Z/:_-]+$"))
-
 ;; Put it all together and define the functions to use for LTS
 (define (indic_lts_function word features)
   "(indic_lts_function WORD FEATURES)
@@ -1374,7 +1381,6 @@ Return pronunciation of word not in lexicon."
   (let ((dword word) (syls) (phones))
 	(set! phones (indic_lts dword))
 	(set! phones (indic_nasal_postfixes phones))
-
 	(if (delete_medial_schwa)
 		(set! phones (reverse (indic_delete_medial_schwa (reverse phones)))))
         ;; language specific postfixes
@@ -1394,10 +1400,8 @@ Return pronunciation of word not in lexicon."
           )
          (t
           nil))
-
 	(set! syls (indic_lex_syllabify_phstress phones))
 	(list word features syls)))
-
 (define (guj_remove_final_ja utt)
   (mapcar
    (lambda (s)
@@ -1408,26 +1412,21 @@ Return pronunciation of word not in lexicon."
              (item.delete s)))
    (utt.relation.items utt 'Segment)))
   utt)
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;
 ;;; Lexicon definition
 ;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
 (lex.create "cmu_indic")
 (lex.set.phoneset "cmu_indic")
 ;; We deal with English words too, and use the English lexicon to
 ;; get a pronunciation then map these to the indic phones as necessary
 (lex.set.lts.method 'indic_ml_lts_function)
-
 (define (cmu_indic::select_lexicon)
   "(cmu_indic::select_lexicon)
 Set up the lexicon for cmu_indic."
   (lex.select "cmu_indic")
-
   (set! postlex_rules_hooks nil)
-
   (cond
    ((string-equal lex:language_variant "guj")
     (set! postlex_rules_hooks (cons guj_remove_final_ja postlex_rules_hooks)))
@@ -1435,10 +1434,8 @@ Set up the lexicon for cmu_indic."
     nil))
   
 )
-
 (define (cmu_indic::reset_lexicon)
   "(cmu_indic::reset_lexicon)
 Reset lexicon information."
   t)
-
 (provide 'indic_lexicon)

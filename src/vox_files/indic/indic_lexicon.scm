@@ -49,7 +49,7 @@
 ;; kan Kannada
 ;; mar Marathi
 ;; mar Nepali
-;; odi Odia
+;; ori Odia ;; ISO 'ori' as ISO 639-2 	'or' ISO 639-1
 ;; pan Panjabi
 ;; raj Rajasthani (not Marwati)
 ;; san Sanskrit
